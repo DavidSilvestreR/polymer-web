@@ -1,10 +1,9 @@
 <link rel="import" href="../../bower_components/polymer/polymer-element.html">
 <link rel="import" href="../../bower_components/polymer/lib/elements/dom-if.html">
 <link rel="import" href="../../bower_components/login-component/login-component.html">
-<link rel="import" href="../../bower_components/paper-dropdown-menu/paper-dropdown-menu.html">
 <link rel="import" href="../../bower_components/contact-compounent/contact-compounent.html">
-<link rel="import" href="../../bower_components/paper-listbox/paper-listbox.html">
-<link rel="import" href="../../bower_components/paper-item/paper-item.html">
+<link rel="import" href="../lang-component/lang-component.html">
+
 
 <dom-module id="polymer-web-app">
   <template>
@@ -44,12 +43,9 @@
     </style>
     <div class="nav">
       <h2>[[localSelected.title]]</h2>
-      <paper-dropdown-menu label="Idioma" on-selected-item-label-changed="changeLang" class="dropdown-content" selected="1">
-        <paper-listbox slot="dropdown-content">
-          <paper-item data-value="es">ES</paper-item>
-          <paper-item data-value="en">EN</paper-item>
-        </paper-listbox>
-      </paper-dropdown-menu>
+      <lang-component on-change-lang="langeChange"></lang-component>
+
+     
     </div>
     <dom-if if="[[logged]]">
       <template>
@@ -85,48 +81,6 @@
             type: Array,
             value: []
           },
-          languageSelected: {
-            type: String,
-            value: 'es',
-            observer: '_setLocal'
-          },
-
-          locales: {
-            type: Object,
-            value: {
-              es: {
-                title: 'Lista de Contactos',
-                form: {
-                  userName: "Nombre de usuario",
-                  password: "Contraseña",
-                  login: "Iniciar Sesión",
-                  name: "Nombre",
-                  lastName: "Apellido",
-                  age: "Edad",
-                  email: "Correo",
-                  confirmPassword: "Confirmar Contraseña",
-                  register: "Registrar",
-                  contacts:"Contactos"
-
-                }
-              },
-              en: {
-                title: 'Contact List',
-                form: {
-                  userName: "User Name",
-                  password: "Password",
-                  login: "Log In",
-                  name: "Name",
-                  lastName: "Last Name",
-                  age: "Years",
-                  email: "email",
-                  confirmPassword: "Confirm Password",
-                  register: "register",
-                  contacts:"Contacts"
-                }
-              }
-            }
-          },
           localSelected: {
             type: Object,
             value: {}
@@ -146,9 +100,7 @@
           alert("contraseña y usuario incorrecta")
         }
       }
-      _setLocal() {
-        this.set('localSelected', this.locales[this.languageSelected]);
-      }
+     
       signin(event) {
         const user = event.detail
         this.push('users', user)
@@ -157,13 +109,13 @@
       logout() {
         this.set('logged', false);
       }
-      changeLang(event) {
-        this.set('languageSelected', (event.detail.value).toLowerCase());
+      langeChange(event){
+        this.set('localSelected', event.detail.lang)
       }
+      
     }
 
     window.customElements.define(PolymerWebApp.is, PolymerWebApp);
   </script>
-  <script src="/bower_components/web-animations-js/web-animations-next-lite.min.js"></script>
 
 </dom-module>

@@ -1,0 +1,90 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/paper-dropdown-menu/paper-dropdown-menu.html">
+<link rel="import" href="../../bower_components/paper-listbox/paper-listbox.html">
+<link rel="import" href="../../bower_components/paper-item/paper-item.html">
+
+<dom-module id="lang-component">
+    <template>
+        <style>
+            :host {
+                display: block;
+            }
+        </style>
+        <paper-dropdown-menu label="Idioma" on-selected-item-label-changed="changeLang" class="dropdown-content"
+            selected="1">
+            <paper-listbox slot="dropdown-content">
+                <paper-item data-value="es">ES</paper-item>
+                <paper-item data-value="en">EN</paper-item>
+            </paper-listbox>
+        </paper-dropdown-menu>
+    </template>
+    <script>
+        class LangComponent extends Polymer.Element {
+            static get is() { return "lang-component" }
+            static get properties() {
+                return {
+                    lang: {
+                        type: String,
+                        value: 'es'
+                    },
+                    locales: {
+                        type: Object,
+                        value: {
+                            es: {
+                                title: 'Lista de Contactos',
+                                form: {
+                                    userName: "Nombre de usuario",
+                                    password: "Contraseña",
+                                    login: "Iniciar Sesión",
+                                    name: "Nombre",
+                                    lastName: "Apellido",
+                                    age: "Edad",
+                                    email: "Correo",
+                                    confirmPassword: "Confirmar Contraseña",
+                                    register: "Registrar",
+                                    contacts: "Contactos"
+
+                                }
+                            },
+                            en: {
+                                title: 'Contact List',
+                                form: {
+                                    userName: "User Name",
+                                    password: "Password",
+                                    login: "Log In",
+                                    name: "Name",
+                                    lastName: "Last Name",
+                                    age: "Years",
+                                    email: "email",
+                                    confirmPassword: "Confirm Password",
+                                    register: "register",
+                                    contacts: "Contacts"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            ready(){
+                super.ready();
+                  
+            }
+            changeLang(event) {
+                let lang = (event.detail.value).toLowerCase()
+                console.log(event.detail)
+                this.dispatchEvent(new CustomEvent('change-lang', {
+                    bubbles: false,
+                    composed: false,
+                    detail: {
+                        lang: this.locales[lang]
+                    }
+                }))
+            }
+            
+        }
+        window.customElements.define(LangComponent.is, LangComponent)
+    </script>
+    <script src="../../bower_components/web-animations-js/web-animations-next-lite.min.js"></script>
+
+
+</dom-module>
