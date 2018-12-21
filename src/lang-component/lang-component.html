@@ -67,11 +67,14 @@
             }
             ready(){
                 super.ready();
-                  
+                this._createDispatchEvent('es')
             }
             changeLang(event) {
-                let lang = (event.detail.value).toLowerCase()
-                console.log(event.detail)
+                const lang = (event.detail.value).toLowerCase()
+                this._createDispatchEvent(lang)
+                
+            }
+            _createDispatchEvent(lang){
                 this.dispatchEvent(new CustomEvent('change-lang', {
                     bubbles: false,
                     composed: false,
