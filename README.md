@@ -1,6 +1,11 @@
-# \<polymer-web\>
+# \<E-commerce\>
 
-this is myfirst aplications in polymer
+##IMPORTANT
+```
+run bower i
+
+polymer serve
+```
 
 ## Install the Polymer-CLI
 
