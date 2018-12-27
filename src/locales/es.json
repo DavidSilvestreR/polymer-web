@@ -1,0 +1,19 @@
+{
+    "title": "Lista de Contactos",
+    "form": {
+      "userName": "Nombre de usuario",
+      "password": "Contraseña",
+      "login": "Iniciar Sesión",
+      "name": "Nombre",
+      "lastName": "Apellido",
+      "age": "Edad",
+      "email": "Correo",
+      "confirmPassword": "Confirmar Contraseña",
+      "register": "Registrar",
+      "contacts":"Contactos",
+      "sinhup":"¿No tienes cuenta? Da clic",
+      "buton":"Aqui",
+      "singin":"Ya tienes cuenta Inicia sesión",
+      "registerCount":"Registrate"
+    }
+}

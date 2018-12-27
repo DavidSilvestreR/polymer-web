@@ -2,7 +2,7 @@
 <link rel="import" href="../../bower_components/polymer/lib/elements/dom-if.html">
 <link rel="import" href="../../bower_components/login-component/login-component.html">
 <link rel="import" href="../../bower_components/contact-compounent/contact-compounent.html">
-<link rel="import" href="../lang-component/lang-component.html">
+<link rel="import" href="../../bower_components/lang-component/lang-component.html">
 
 
 <dom-module id="polymer-web-app">
@@ -35,34 +35,28 @@
       .container {
         width: 60%;
         margin: auto;
-        margin-top:5%;
+        margin-top: 5%;
         background: white;
         border-bottom: 1px solid #ededed;
-        padding:20px 40px;
+        padding: 20px 40px;
       }
     </style>
     <div class="nav">
       <h2>[[localSelected.title]]</h2>
-      <lang-component on-change-lang="langeChange"></lang-component>
-
-     
+      <lang-component lang="es" visible="true" source='/src/locales' on-change-lang="langeChange"></lang-component>
     </div>
-    <dom-if if="[[logged]]">
-      <template>
-        <contact-compounent language=[[localSelected]] users=[[users]]></contact-compounent>
-        <paper-button on-tap="logout">Cerrar sesión</paper-button>
-      </template>
-    </dom-if>
-    <dom-if if="[[!logged]]">
-
-      <template>
-        <div class="container">
-          <login-component language=[[localSelected]] on-register-user="signin" on-login-user="login"></login-component>
-        </div>
-      </template>
+    <div hidden$="[[!logged]]">
+      <contact-compounent language=[[localSelected]] users=[[users]]></contact-compounent>
+      <paper-button on-tap="logout">Cerrar sesión</paper-button>
+    </div>
 
 
-    </dom-if>
+    <div class="container" hidden$="[[logged]]">
+      <login-component language=[[localSelected]] on-register-user="signin" on-login-user="login"></login-component>
+    </div>
+
+
+
   </template>
   <script>
     /**
@@ -100,7 +94,7 @@
           alert("contraseña y usuario incorrecta")
         }
       }
-     
+
       signin(event) {
         const user = event.detail
         this.push('users', user)
@@ -109,10 +103,10 @@
       logout() {
         this.set('logged', false);
       }
-      langeChange(event){
-        this.set('localSelected', event.detail.lang)
+      langeChange(event) {
+        this.set('localSelected', event.detail.data)
       }
-      
+
     }
 
     window.customElements.define(PolymerWebApp.is, PolymerWebApp);
