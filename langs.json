@@ -1,0 +1,36 @@
+{
+    "langs":{
+        "es": {
+            "title": "Lista de Contactos",
+            "form": {
+              "userName": "Nombre de usuario",
+              "password": "Contraseña",
+              "login": "Iniciar Sesión",
+              "name": "Nombre",
+              "lastName": "Apellido",
+              "age": "Edad",
+              "email": "Correo",
+              "confirmPassword": "Confirmar Contraseña",
+              "register": "Registrar",
+              "contacts":"Contactos"
+      
+            }
+          },
+          "en": {
+            "title": "Contact List",
+            "form": {
+              "userName": "User Name",
+              "password": "Password",
+              "login": "Log In",
+              "name": "Name",
+              "lastName": "Last Name",
+              "age": "Years",
+              "email": "email",
+              "confirmPassword": "Confirm Password",
+              "register": "register",
+              "contacts":"Contacts"
+            }
+          }
+    }
+    
+  }

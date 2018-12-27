@@ -4,12 +4,15 @@
   "main": "index.html",
   "dependencies": {
     "polymer": "Polymer/polymer#^2.0.0",
-    "contact-compounent": "DavidSilvestreR/contact-polymer",
+    "contact-compounent": "DavidSilvestreR/contact-compounent",
     "login-component": "DavidSilvestreR/login-componet",
     "paper-dropdown-menu": "PolymerElements/paper-dropdown-menu#2.1.0",
     "paper-listbox": "PolymerElements/paper-listbox#2.1.1",
     "paper-item": "PolymerElements/paper-item#2.1.1",
-    "neon-animation": "PolymerElements/neon-animation#2.2.1"
+    "neon-animation": "PolymerElements/neon-animation#2.2.1",
+    "web-animations-js": "^2.3.1",
+    "iron-ajax": "PolymerElements/iron-ajax#2.1.3",
+    "lang-component": "DavidSilvestreR/lang-component"
   },
   "devDependencies": {
     "web-component-tester": "Polymer/web-component-tester#^6.0.0",

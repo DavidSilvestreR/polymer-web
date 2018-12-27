@@ -1,0 +1,20 @@
+{
+    "title": "Contact List",
+    "form": {
+      "userName": "User Name",
+      "password": "Password",
+      "login": "Log In",
+      "name": "Name",
+      "lastName": "Last Name",
+      "age": "Years",
+      "email": "email",
+      "confirmPassword": "Confirm Password",
+      "register": "register",
+      "contacts":"Contacts",
+      "sinhup":"sing up ",
+      "buton":"here",
+      "singin":"Sign in",
+      "registerCount":"sign up account",
+      "logout":"Sing out"
+    }
+  }
