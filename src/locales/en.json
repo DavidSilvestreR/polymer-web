@@ -14,6 +14,7 @@
       "sinhup":"sing up ",
       "buton":"here",
       "singin":"Sign in",
-      "registerCount":"sign up account"
+      "registerCount":"sign up account",
+      "logout":"Sing out"
     }
   }

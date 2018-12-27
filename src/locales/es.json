@@ -14,6 +14,7 @@
       "sinhup":"¿No tienes cuenta? Da clic",
       "buton":"Aqui",
       "singin":"Ya tienes cuenta Inicia sesión",
-      "registerCount":"Registrate"
+      "registerCount":"Registrate",
+      "logout":"Cerrar sesión "
     }
 }
