@@ -1,5 +1,8 @@
 {
     "title": "Contact List",
+    "langEs":"Spanish",
+    "langEn":"English",
+    "language":"language",
     "form": {
       "userName": "User Name",
       "password": "Password",
@@ -12,6 +15,7 @@
       "register": "register",
       "contacts":"Contacts",
       "sinhup":"sing up ",
+      "moreInfo":" more information",
       "buton":"here",
       "singin":"Sign in",
       "registerCount":"sign up account",

@@ -1,5 +1,8 @@
 {
     "title": "Lista de Contactos",
+    "langEs":"Español",
+    "langEn":"Inglés",
+    "language":"Idioma",
     "form": {
       "userName": "Nombre de usuario",
       "password": "Contraseña",
@@ -12,6 +15,7 @@
       "register": "Registrar",
       "contacts":"Contactos",
       "sinhup":"¿No tienes cuenta? Da clic",
+      "moreInfo":"Ver más",
       "buton":"Aqui",
       "singin":"Ya tienes cuenta Inicia sesión",
       "registerCount":"Registrate",
